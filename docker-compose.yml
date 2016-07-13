@@ -1,0 +1,9 @@
+version: "2"
+
+services:
+  request_factory:
+    build: .
+    volumes:
+      - ./src/:/src/
+    environment:
+      - "PYTHONPATH=$PYTHONPATH:/src"
