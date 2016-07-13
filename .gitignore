@@ -1,0 +1,36 @@
+.idea/
+*.py[cod]
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+doc
+eggs
+parts
+var
+sdist
+develop-eggs
+.installed.cfg
+lib64
+__pycache__
+.cache
+
+# IPython notebook
+.ipynb_checkpoints
+
+# Installer logs
+pip-log.txt
+
+# Unit test / coverage reports
+.coverage
+.tox
+nosetests.xml
+coverage_html_report
+htmlcov/
+coverage.xml
+# Translations
+*.mo
+
+/*.log
