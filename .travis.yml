@@ -12,7 +12,6 @@ before_install:
 
 install:
   - pip install docker-compose
-  - pip install -r loktar/test_requirements.txt
   - pip install coveralls
 
 # command to run tests
