@@ -26,9 +26,9 @@ clean-docker:
 	docker-compose rm --all -fv
 
 clean-build:
-	rm -rf build/
-	rm -rf dist/
-	rm -rf *egg*/
+	rm -rf ./src/build/
+	rm -rf ./src/dist/
+	rm -rf ./src/*egg*/
 
 clean-pyc:
 	find . -name '*.pyc' -exec rm -f {} +
@@ -60,8 +60,11 @@ docs:
 	# $(MAKE) -C docs html
 	@echo 'to do gen doc'
 
+register: clean build
+	docker-compose -f docker-compose.yml -f docker-compose-release.yml run --no-deps request_factory python setup.py register -r tinypypi
+
 release: clean build
-	docker-compose run --no-deps request_factory python setup.py bdist_wheel upload -r pypi
+	docker-compose -f docker-compose.yml -f docker-compose-release.yml run --no-deps request_factory python setup.py bdist_wheel upload -r tinypypi
 
 dist: clean
 	python setup.py sdist
