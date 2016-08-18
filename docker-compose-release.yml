@@ -1,0 +1,6 @@
+version: "2"
+
+services:
+  request_factory:
+    volumes:
+      - ~/.pypirc:/root/.pypirc
