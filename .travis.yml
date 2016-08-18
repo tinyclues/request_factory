@@ -23,4 +23,4 @@ install:
 
 script: make all && ls -la && ls -la src
 
-after_success: coveralls
+after_success: cd src && coveralls
